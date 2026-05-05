@@ -186,7 +186,7 @@ This project is open source and available for personal and commercial use.
 
 ---
 
-## 👤 Author
+## 👤 AuthorLocal Volumes   270  
 
 **Zulfa Falah**
 

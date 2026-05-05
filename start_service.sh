@@ -32,6 +32,24 @@ gnome-terminal --tab --title="Service Collection" -- bash -c "
 " &
 TERMINAL_PIDS+=($!)
 
+# Start service-inventory in a new terminal tab
+gnome-terminal --tab --title="Service Inventory" -- bash -c "
+    echo 'Starting Service Inventory...'
+    cd ~/Development/GOLANG/service-inventory
+    go run cmd/web/main.go
+    exec bash
+" &
+TERMINAL_PIDS+=($!)
+
+# Start service-master-grpc in a new terminal tab
+gnome-terminal --tab --title="Service Master GRPC" -- bash -c "
+    echo 'Starting Service Master GRPC...'
+    cd ~/Development/GOLANG/service-master
+    go run cmd/grpc/main.go
+    exec bash
+" &
+TERMINAL_PIDS+=($!)
+
 # Start service-proxy in another new terminal tab
 gnome-terminal --tab --title="Service Proxy" -- bash -c "
     echo 'Starting Service Proxy...'
